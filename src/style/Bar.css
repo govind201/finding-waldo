@@ -1,0 +1,37 @@
+.bar {
+  background-color: #fff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 3px 5px rgba(240, 240, 240, 0.5);
+  position: sticky;
+  top: 0;
+}
+
+.characters {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.timer {
+  font-size: 3vmax;
+  font-weight: bold;
+}
+
+.bar img {
+  max-width: 40px;
+}
+
+.character-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2vmax;
+  font-weight: bold;
+}
+
+.opaque {
+  opacity: 0.7;
+}

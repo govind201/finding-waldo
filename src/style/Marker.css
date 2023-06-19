@@ -1,0 +1,9 @@
+.marker {
+  color: rgb(113, 243, 113);
+  font-size: 1.8vmax;
+  font-weight: bold;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

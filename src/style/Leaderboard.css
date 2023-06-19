@@ -1,0 +1,63 @@
+#leaderboard,
+#scores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#leaderboard {
+  color: #fff;
+  gap: 2vh;
+}
+
+#leaderboard .player-score {
+  font-size: 2.5vmax;
+}
+
+#leaderboard .game-over {
+  font-size: 5vmax;
+  font-weight: bold;
+  margin-top: 5vh;
+}
+
+#name {
+  width: 20vw;
+  height: auto;
+  font-size: 2.5vmax;
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  border-bottom: 3px solid #fff;
+  outline: none;
+}
+
+#name::placeholder {
+  color: #fff;
+}
+
+#leaderboard .title {
+  font-size: 4.5vmax;
+  font-weight: bold;
+  margin-top: 3vh;
+}
+
+#scores {
+  font-size: 1.8vmax;
+  align-items: flex-start;
+  gap: 1vmax;
+}
+
+button {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  height: auto;
+  font-size: 2vmax;
+  padding: 5px 10px;
+}
+
+form {
+  display: flex;
+  gap: 1vmax;
+}

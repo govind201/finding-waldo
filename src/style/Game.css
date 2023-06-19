@@ -1,0 +1,9 @@
+.main {
+  overflow: visible;
+  width: 100%;
+}
+
+#game-img {
+  max-width: 100%;
+  height: auto;
+}

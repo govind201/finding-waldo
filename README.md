@@ -1,1 +1,1 @@
-# finding-waldo
+# photo Tagging Project

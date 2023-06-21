@@ -3,16 +3,12 @@ import "../style/Feedback.css";
 
 const Feedback = (props) => {
   return (
-    <div
-      className={`feedback-container ${props.didFind}`}
-      data-testid="background"
-    >
-      {(() => {
-        if (props.didFind === "correct") {
-          return <div className="feedback">Correct!</div>;
-        }
-        return <div className="feedback">Nice try!</div>;
-      })()}
+    <div className={`feedback-container ${props.didFind}`} data-testid="background">
+      {props.didFind === "correct" ? (
+        <div className="feedback">Correct!</div>
+      ) : (
+        <div className="feedback">Nice try!</div>
+      )}
     </div>
   );
 };

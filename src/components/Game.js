@@ -28,7 +28,6 @@ const Game = (props) => {
         navigate("/leaderboard");
       }
     };
-    console.log("called");
     if (!!wizard && !!wenda && !!waldo) {
       gameOver();
     }

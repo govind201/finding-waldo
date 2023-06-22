@@ -6,13 +6,13 @@ import Leaderboard from "./Leaderboard";
 const RouteSwitch = () => {
   const [score, setScore] = useState(0);
 
-  const updateScore = (toThis) => {
-    setScore(toThis);
+  const updateScore = (newScore) => {
+    setScore(newScore);
   };
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Game score={updateScore} />} />
+        <Route path="/" element={<Game updateScore={updateScore} />} />
         <Route path="/leaderboard" element={<Leaderboard score={score} />} />
       </Routes>
     </BrowserRouter>

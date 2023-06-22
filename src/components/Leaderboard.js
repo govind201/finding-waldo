@@ -10,8 +10,7 @@ import "../style/Leaderboard.css";
 import { store } from "../firebase/firebase.config";
 import uniqid from "uniqid";
 
-const Leaderboard = (props) => {
-  const { score } = props;
+const Leaderboard = ({score}) => {
   const [scores, setScores] = useState([]);
   const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -38,35 +37,13 @@ const Leaderboard = (props) => {
       const retrievedScores = querySnapshot.docs.map((doc) => doc.data());
       return retrievedScores;
     };
-
-    const mergeSort = (array) => {
-      if (array.length < 2) return array;
-
-      const middle = Math.floor(array.length / 2);
-      const left = array.slice(0, middle);
-      const right = array.slice(middle);
-
-      const merge = (leftArr, rightArr) => {
-        const sorted = [];
-        while (leftArr.length && rightArr.length) {
-          const smaller =
-            leftArr[0].score < rightArr[0].score
-              ? leftArr.shift()
-              : rightArr.shift();
-          sorted.push(smaller);
-        }
-        return [...sorted, ...leftArr, ...rightArr];
-      };
-
-      return merge(mergeSort(left), mergeSort(right));
-    };
-
+  
     const sortTopScores = async () => {
       const retrievedScores = await retrieveScores();
-      const sortedScores = mergeSort(retrievedScores);
+      const sortedScores = retrievedScores.sort((a, b) => a.score - b.score);
       setScores(sortedScores);
     };
-
+  
     sortTopScores();
   }, [submitted]);
 

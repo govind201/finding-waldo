@@ -1,10 +1,10 @@
 import React from "react";
 import "../style/Feedback.css";
 
-const Feedback = (props) => {
+const Feedback = ({didFind}) => {
   return (
-    <div className={`feedback-container ${props.didFind}`} data-testid="background">
-      {props.didFind === "correct" ? (
+    <div className={`feedback-container ${didFind}`} >
+      {didFind === "correct" ? (
         <div className="feedback">Correct!</div>
       ) : (
         <div className="feedback">Nice try!</div>

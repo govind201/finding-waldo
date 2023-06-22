@@ -10,7 +10,7 @@ import Feedback from "./Feedback";
 import Box from "./Box";
 import { useNavigate } from "react-router-dom";
 
-const Game = (props) => {
+const Game = ({updateScore}) => {
   const [dropDown, setDropDown] = useState(false);
   const [clickCoords, setClickCoords] = useState(null);
   const [hidChars, setHidChars] = useState([]);
@@ -144,9 +144,8 @@ const Game = (props) => {
 
   return (
     <div className="main">
-      <Bar characters={[waldo, wenda, wizard]} score={props.score} />
+      <Bar characters={[waldo, wenda, wizard]} updateScore={updateScore} />
       <img
-        data-testid="game"
         src={require("../style/images/whereswaldo.jpg")}
         alt="wheres waldo. Click to play"
         onClick={clickedCoord}
@@ -156,17 +155,17 @@ const Game = (props) => {
       {dropDown && (
         <>
           <Dropdown
-            characters={hidChars}
-            dropDisplay={displayDropDown}
-            coords={clickCoords}
-            found={isCharacterFound}
+            hiddenCharacters={hidChars}
+            displayDropDown={displayDropDown}
+            clickCoords={clickCoords}
+            isCharacterFound={isCharacterFound}
           />
-          <Box coords={clickCoords} />
+          <Box clickCoords={clickCoords} />
         </>
       )}
       {wizard !== null &&
-        [waldo, wenda, wizard].map((char) =>
-          char.found ? <Marker char={char} key={char.id} /> : null
+        [waldo, wenda, wizard].map((character) =>
+          character.found ? <Marker character={character} key={character.id} /> : null
         )}
     </div>
   );

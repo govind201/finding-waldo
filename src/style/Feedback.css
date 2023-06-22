@@ -1,0 +1,26 @@
+.feedback-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 8vw;
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  z-index: 3;
+}
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
+.feedback {
+  color: #fff;
+  font-size: 1.5vmax;
+  font-weight: bold;
+}
